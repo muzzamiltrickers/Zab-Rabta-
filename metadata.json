@@ -1,0 +1,7 @@
+{
+  "name": "ZAB-Rabta",
+  "description": "Karachi-focused HIV awareness, voluntary testing, treatment-care information, private medicine reminders, and community health support application.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

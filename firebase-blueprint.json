@@ -1,0 +1,135 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Registered user profile details without sensitive health status.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "format": "email", "maxLength": 120 },
+        "role": { "type": "string", "enum": ["user", "admin"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "name", "email"]
+    },
+    "MedicineReminder": {
+      "title": "MedicineReminder",
+      "description": "Private adherence reminder for user's prescribed medication.",
+      "type": "object",
+      "properties": {
+        "reminderId": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "medicineName": { "type": "string", "maxLength": 100 },
+        "time": { "type": "string", "maxLength": 20 },
+        "frequency": { "type": "string", "maxLength": 50 },
+        "startDate": { "type": "string", "maxLength": 30 },
+        "endDate": { "type": "string", "maxLength": 30 },
+        "notes": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["reminderId", "userId", "medicineName", "time"]
+    },
+    "HIVCenter": {
+      "title": "HIVCenter",
+      "description": "Karachi hospital or clinic offering HIV testing, ART treatment, and care.",
+      "type": "object",
+      "properties": {
+        "centerId": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 150 },
+        "address": { "type": "string", "maxLength": 250 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "services": { "type": "string", "maxLength": 500 },
+        "openingHours": { "type": "string", "maxLength": 100 },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" }
+      },
+      "required": ["centerId", "name", "address", "phone"]
+    },
+    "District": {
+      "title": "District",
+      "description": "Karachi district health and outreach coordination.",
+      "type": "object",
+      "properties": {
+        "districtId": { "type": "string", "maxLength": 64 },
+        "name": { "type": "string", "maxLength": 100 },
+        "coordinatorContact": { "type": "string", "maxLength": 50 },
+        "description": { "type": "string", "maxLength": 500 }
+      },
+      "required": ["districtId", "name", "coordinatorContact"]
+    },
+    "Camp": {
+      "title": "Camp",
+      "description": "Awareness camp or testing event organized across Karachi districts.",
+      "type": "object",
+      "properties": {
+        "campId": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 150 },
+        "date": { "type": "string", "maxLength": 50 },
+        "time": { "type": "string", "maxLength": 50 },
+        "district": { "type": "string", "maxLength": 100 },
+        "location": { "type": "string", "maxLength": 250 },
+        "description": { "type": "string", "maxLength": 1000 },
+        "imageUrl": { "type": "string", "maxLength": 500 },
+        "testingAvailable": { "type": "boolean" },
+        "contact": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["campId", "title", "date", "district", "location"]
+    },
+    "Awareness": {
+      "title": "Awareness",
+      "description": "Educational medical article regarding HIV, AIDS, transmission, and prevention.",
+      "type": "object",
+      "properties": {
+        "articleId": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 150 },
+        "content": { "type": "string", "maxLength": 4000 },
+        "imageUrl": { "type": "string", "maxLength": 500 },
+        "category": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["articleId", "title", "content"]
+    },
+    "AppSettings": {
+      "title": "AppSettings",
+      "description": "Global application configuration for ZAB-Rabta.",
+      "type": "object",
+      "properties": {
+        "contactNumber": { "type": "string", "maxLength": 30 },
+        "instagramUrl": { "type": "string", "maxLength": 300 },
+        "appName": { "type": "string", "maxLength": 50 },
+        "announcement": { "type": "string", "maxLength": 500 }
+      },
+      "required": ["contactNumber", "instagramUrl", "appName"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Private user account profile."
+    },
+    "/medicineReminders/{reminderId}": {
+      "schema": "MedicineReminder",
+      "description": "Strictly private user medicine reminder schedules."
+    },
+    "/hivCenters/{centerId}": {
+      "schema": "HIVCenter",
+      "description": "Karachi HIV testing, care, and ART hospitals."
+    },
+    "/districts/{districtId}": {
+      "schema": "District",
+      "description": "Karachi district health coordination."
+    },
+    "/camps/{campId}": {
+      "schema": "Camp",
+      "description": "Karachi community awareness and screening camps."
+    },
+    "/awareness/{articleId}": {
+      "schema": "Awareness",
+      "description": "Educational articles on HIV and AIDS."
+    },
+    "/appSettings/general": {
+      "schema": "AppSettings",
+      "description": "Global application settings."
+    }
+  }
+}

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <!-- Curved path for RABTA text at bottom -->
+    <path id="rabta-path" d="M 100,320 A 180,180 0 0,0 400,320" fill="none" />
+    <path id="rabta-path-inner" d="M 90,340 A 185,185 0 0,0 410,340" fill="none" />
+    <!-- Gradient for wheat stalks -->
+    <linearGradient id="wheat-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="50%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+    <!-- Clip path for inner circle content -->
+    <clipPath id="inner-circle-clip">
+      <circle cx="250" cy="250" r="145" />
+    </clipPath>
+  </defs>
+
+  <!-- Outer Black Circle -->
+  <circle cx="250" cy="250" r="242" fill="#0b0b0b" />
+
+  <!-- Inner Circle with Clip -->
+  <g clip-path="url(#inner-circle-clip)">
+    <!-- Green Field -->
+    <circle cx="250" cy="250" r="145" fill="#0d8a4a" />
+
+    <!-- Sunburst Golden Rays -->
+    <g stroke="#facc15" stroke-width="6" stroke-linecap="round">
+      <line x1="250" y1="285" x2="130" y2="185" />
+      <line x1="250" y1="285" x2="148" y2="160" />
+      <line x1="250" y1="285" x2="175" y2="140" />
+      <line x1="250" y1="285" x2="205" y2="125" />
+      <line x1="250" y1="285" x2="235" y2="115" />
+      <line x1="250" y1="285" x2="250" y2="112" />
+      <line x1="250" y1="285" x2="265" y2="115" />
+      <line x1="250" y1="285" x2="295" y2="125" />
+      <line x1="250" y1="285" x2="325" y2="140" />
+      <line x1="250" y1="285" x2="352" y2="160" />
+      <line x1="250" y1="285" x2="370" y2="185" />
+      <line x1="250" y1="285" x2="385" y2="215" />
+      <line x1="250" y1="285" x2="115" y2="215" />
+    </g>
+
+    <!-- Rising Sun Semi-Circle -->
+    <circle cx="250" cy="285" r="58" fill="#facc15" />
+
+    <!-- Red Crescent Moon at Bottom -->
+    <path d="M 105,230 C 105,335 170,395 250,395 C 330,395 395,335 395,230 C 350,340 150,340 105,230 Z" fill="#dc2626" />
+
+    <!-- Red Five-Pointed Star at Top -->
+    <!-- Center (250, 135), outer radius 44, inner radius 18 -->
+    <polygon points="
+      250,92
+      261,123
+      294,124
+      268,144
+      278,175
+      250,156
+      222,175
+      232,144
+      206,124
+      239,123
+    " fill="#dc2626" stroke="#991b1b" stroke-width="1.5" />
+  </g>
+
+  <!-- Inner Circle Border -->
+  <circle cx="250" cy="250" r="145" fill="none" stroke="#facc15" stroke-width="4.5" />
+
+  <!-- Left Golden Wheat Stalk -->
+  <g fill="url(#wheat-gold)" stroke="#ca8a04" stroke-width="1">
+    <!-- Main stem curve -->
+    <path d="M 125,385 C 60,300 60,200 120,110" fill="none" stroke="#eab308" stroke-width="5" stroke-linecap="round" />
+    <!-- Wheat grains left -->
+    <ellipse cx="118" cy="118" rx="14" ry="7" transform="rotate(-40 118 118)" />
+    <ellipse cx="102" cy="138" rx="15" ry="8" transform="rotate(-45 102 138)" />
+    <ellipse cx="90" cy="162" rx="16" ry="8.5" transform="rotate(-55 90 162)" />
+    <ellipse cx="80" cy="190" rx="17" ry="9" transform="rotate(-65 80 190)" />
+    <ellipse cx="74" cy="220" rx="17" ry="9" transform="rotate(-75 74 220)" />
+    <ellipse cx="72" cy="252" rx="17" ry="9" transform="rotate(-85 72 252)" />
+    <ellipse cx="76" cy="284" rx="17" ry="9" transform="rotate(-95 76 284)" />
+    <ellipse cx="84" cy="314" rx="16" ry="8.5" transform="rotate(-110 84 314)" />
+    <ellipse cx="98" cy="342" rx="15" ry="8" transform="rotate(-125 98 342)" />
+    <ellipse cx="118" cy="368" rx="13" ry="7" transform="rotate(-140 118 368)" />
+  </g>
+
+  <!-- Right Golden Wheat Stalk -->
+  <g fill="url(#wheat-gold)" stroke="#ca8a04" stroke-width="1">
+    <!-- Main stem curve -->
+    <path d="M 375,385 C 440,300 440,200 380,110" fill="none" stroke="#eab308" stroke-width="5" stroke-linecap="round" />
+    <!-- Wheat grains right -->
+    <ellipse cx="382" cy="118" rx="14" ry="7" transform="rotate(40 382 118)" />
+    <ellipse cx="398" cy="138" rx="15" ry="8" transform="rotate(45 398 138)" />
+    <ellipse cx="410" cy="162" rx="16" ry="8.5" transform="rotate(55 410 162)" />
+    <ellipse cx="420" cy="190" rx="17" ry="9" transform="rotate(65 420 190)" />
+    <ellipse cx="426" cy="220" rx="17" ry="9" transform="rotate(75 426 220)" />
+    <ellipse cx="428" cy="252" rx="17" ry="9" transform="rotate(85 428 252)" />
+    <ellipse cx="424" cy="284" rx="17" ry="9" transform="rotate(95 424 284)" />
+    <ellipse cx="416" cy="314" rx="16" ry="8.5" transform="rotate(110 416 314)" />
+    <ellipse cx="402" cy="342" rx="15" ry="8" transform="rotate(125 402 342)" />
+    <ellipse cx="382" cy="368" rx="13" ry="7" transform="rotate(140 382 368)" />
+  </g>
+
+  <!-- Top Text: ZAB -->
+  <text x="250" y="86" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Arial, sans-serif" font-weight="900" font-size="68" fill="#ffffff" letter-spacing="4">
+    ZAB
+  </text>
+
+  <!-- Bottom Curved Text: RABTA -->
+  <text font-family="system-ui, -apple-system, 'Segoe UI', Arial, sans-serif" font-weight="900" font-size="64" fill="#ffffff" letter-spacing="8">
+    <textPath href="#rabta-path-inner" startOffset="50%" text-anchor="middle">
+      RABTA
+    </textPath>
+  </text>
+</svg>
